@@ -1,0 +1,14 @@
+h1 {
+    text-align: center; background-color: deepskyblue; font-size: 36px; 
+}
+
+h2 {
+    font-size: 28px;
+}
+.container-fluid {
+ width:60%; background-color: rgb(92, 214, 255); 
+}
+
+.btn-sm {
+    margin-right: 4%; margin-bottom: 4%;
+}
