@@ -29,11 +29,11 @@
           
             <div class="col">
             <label for="TaksName">Task Name:</label>
-            <input type="text" class="form-control" placeholder="task name">
+            <input type="text" class="form-control" id = 'taskName' placeholder="task name">
           </div>
           <div class="col">
             <label for="TaskDescription">Task Description:</label>
-    <textarea class="form-control" id="TaskDescription" rows="3"></textarea>
+    <textarea class="form-control" id="taskDescription" rows="3"></textarea>
           
         </div>
         </div>
@@ -42,18 +42,22 @@
           
             <div class="col">
               <label for="Assigned To">Assigned To:</label>
-              <input type="text" class="form-control" placeholder="first last">
+              <input type="text" class="form-control" id='assignedTo' placeholder="first last">
             </div>
             <div class="col">
               <label for="Due Date">Due Date:</label>
-              <input type="date" class="form-control" >
+              <input type="date" class="form-control" id='dueDate'>
             </div>
              
         </div>
           <br>
-        
+
+          <div id = 'formAlert' class="alert alert-warning" role="alert">
+            Please fill out all form fields!
+          </div>
+
           <div class="d-grid gap-2 col-3 mx-auto">
-            <button class="btn btn-primary" type="submit">Add Task</button>
+            <button id = "clickButton" class="btn btn-primary" type="button">Add Task</button>
         
         </div>
       
@@ -184,7 +188,7 @@
 
 
 </div>
-
+<script src = "index.js"></script>
 
 
 
