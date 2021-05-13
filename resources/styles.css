@@ -12,3 +12,7 @@ h2 {
 .btn-sm {
     margin-right: 4%; margin-bottom: 4%;
 }
+
+#formAlert {
+    display: none;
+}
