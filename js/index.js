@@ -8,13 +8,15 @@ const newAssignedToInput = document.querySelector('#assignedTo');
 const newDueDateInput = document.querySelector('#dueDate');
 
 const nullCheck = (name, description, assigned, due) => {
-  if ((name === '') && (description === '') && (assigned === '') && (due === '')){
+  if ((name === '') || (description === '') || (assigned === '') || (due === '')){
       return false;
   }
   else{
       return true;
   }
 }
+
+let newTask = new TaskManager();
 
 function formCheck(isValid) {
   var x = document.getElementById("formAlert");
@@ -29,22 +31,28 @@ function validFormFieldInput(){
 
 
 const name = newTaskNameInput.value;
-console.log('name: ' + name);
-return name;
+//console.log('name: ' + name);
 
 const description = newTaskDescriptionInput.value;
-console.log('description: ' + description);
-
+//console.log('description: ' + description);
 
 const assigned = newAssignedToInput.value;
-console.log('assigned to: ' + assigned);
-
+//console.log('assigned to: ' + assigned);
 
 const due = newDueDateInput.value;
-console.log('due: ' + due);
+//console.log('due: ' + due);
 
 const formValid = nullCheck(name, description, assigned, due);
 formCheck(formValid);
+if (formValid){
+  newTask.addTask(name, description, assigned, due);
+  newTaskNameInput.value='';
+  newTaskDescriptionInput.value='';
+  newAssignedToInput.value='';
+  newDueDateInput.value='';
+
+}
+console.log(newTask.tasks);
 }
 
 
@@ -53,11 +61,6 @@ button.addEventListener('click', validFormFieldInput);
 
 
 // validFormFieldInput();
-
-
-let newTask = new TaskManager();
-newTask.addTask(validFormFieldInput);
-console.log(newTask.tasks);
 
 // button .addeventListener ('Click', newTask);
 // mysteryButton .addeventListener('wheel', newTask);
