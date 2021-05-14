@@ -2,7 +2,7 @@
 //Implement a JavaScript function named validFormFieldInput(data)
 //Add an ID attribute to each form field and implement the code needed to retrieve the each form field value using the following method:
  
-const listGroup = document.getElementById('#listGroup');
+const listGroup = document.getElementById('listGroup');
 
 const newTaskNameInput = document.querySelector('#taskName');
 const newTaskDescriptionInput = document.querySelector('#taskDescription');
@@ -55,7 +55,8 @@ if (formValid){
 
 }
 console.log(newTask.tasks);
-newTask.render();
+const taskCardsHtml = newTask.render();
+listGroup.innerHTML = taskCardsHtml;
 }
 
 
@@ -63,8 +64,8 @@ const button = document.getElementById ("clickButton");
 button.addEventListener('click', validFormFieldInput);
 
 
-const taskHtml = createTaskHtml('AA', 'dooo', 'Mary', 23/05/2022);
-console.log(taskHtml);
+// const taskHtml = createTaskHtml('AA', 'dooo', 'Mary', 23/05/2022);
+// console.log(taskHtml);
 
 
 

@@ -29,15 +29,18 @@ class TaskManager {
         this.tasks.push({ name, description, assigned, due, status: 'TODO', id: this.currentId });
     }
     render() {
-        let html2 = '';
+        let tasksHtmlList = [];
         for (let i = 0; i < this.tasks.length; i++) {
-            html2 += createTaskHtml(this.tasks[i].name, this.tasks[i].description, this.tasks[i].assigned, this.tasks[i].due, this.tasks[i].status, this.tasks[i].id);
+            const currentTask = this.tasks[i];
+            const taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assigned, currentTask.due, currentTask.status, currentTask.id);
+            tasksHtmlList.push(taskHtml);
         }
+        const tasksHtml = tasksHtmlList.join('\n');
+        console.log(tasksHtml);
+        return tasksHtml;
 
-        taskHtml  = createTaskHtml.render;
-
-        this.tasksHtmlList.push(taskHtml);
+        
 
     }
-    tasksHtmlList = [];
+    
 }
