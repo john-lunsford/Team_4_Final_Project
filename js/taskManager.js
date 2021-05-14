@@ -1,5 +1,5 @@
-function createTaskHtml(name, description, assigned, due, status,id){
-const html = `<div class="list-group-item"><div class="card border-dark mb-3" style="max-width: 28rem;">
+function createTaskHtml(name, description, assigned, due, status, id) {
+    const html = `<div class="list-group-item"><div class="card border-dark mb-3" style="max-width: 28rem;">
 <div class="card-header">Task ${id}</div>
 <div class="card-body text-dark">
     <h5 class="card-title">${name}</h5>
@@ -12,7 +12,7 @@ const html = `<div class="list-group-item"><div class="card border-dark mb-3" st
     <button type="button" class="btn btn-primary btn-sm">Done</button>
     </div>
 </div></div>`;
-return html;
+    return html;
 
 }
 
@@ -23,14 +23,21 @@ class TaskManager {
         this.tasks = [];
         this._currentId = 0;
     }
-    get currentId (){return this._currentId};
+    get currentId() { return this._currentId };
     addTask(name, description, assigned, due, status) {
         this._currentId++;
-        this.tasks.push ({name, description, assigned, due, status: 'TODO', id: this.currentId});
+        this.tasks.push({ name, description, assigned, due, status: 'TODO', id: this.currentId });
     }
-    render(){
+    render() {
+        let html2 = '';
+        for (let i = 0; i < this.tasks.length; i++) {
+            html2 += createTaskHtml(this.tasks[i].name, this.tasks[i].description, this.tasks[i].assigned, this.tasks[i].due, this.tasks[i].status, this.tasks[i].id);
+        }
 
-    } 
+        taskHtml  = createTaskHtml.render;
+
+        this.tasksHtmlList.push(taskHtml);
+
+    }
     tasksHtmlList = [];
-  }
-  
+}
