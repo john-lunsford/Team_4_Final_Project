@@ -60,6 +60,10 @@ const button = document.getElementById ("clickButton");
 button.addEventListener('click', validFormFieldInput);
 
 
+const taskHtml = createTaskHtml('AA', 'dooo', 'Mary', 23/05/2022);
+console.log(taskHtml);
+
+
 // validFormFieldInput();
 
 // button .addeventListener ('Click', newTask);
