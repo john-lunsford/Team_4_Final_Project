@@ -2,7 +2,8 @@
 //Implement a JavaScript function named validFormFieldInput(data)
 //Add an ID attribute to each form field and implement the code needed to retrieve the each form field value using the following method:
  
-const listGroup = document.getElementById('listGroup');
+
+
 
 const newTaskNameInput = document.querySelector('#taskName');
 const newTaskDescriptionInput = document.querySelector('#taskDescription');
@@ -64,6 +65,18 @@ const button = document.getElementById ("clickButton");
 button.addEventListener('click', validFormFieldInput);
 
 
+// const doneButton = document.querySelector('#doneButton');
+
+const listGroup = document.getElementById('listGroup');
+
+listGroup.addEventListener('click', (event) => { 
+    if (event.target.classList.contains ("doneButton")){
+      const parentTask = event.target.parentElement.parentElement.parentElement;
+      // return parentTask;
+      console.log(parentTask);
+    }
+  // console.log(parentTask);
+});
 // const taskHtml = createTaskHtml('AA', 'dooo', 'Mary', 23/05/2022);
 // console.log(taskHtml);
 
