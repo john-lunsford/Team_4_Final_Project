@@ -9,7 +9,11 @@ h2 {
  width:60%; background-color: rgb(92, 214, 255); 
 }
 
-.btn-sm {
+.doneButton {
+    margin-right: 4%; margin-bottom: 4%;
+}
+
+.deleteButton {
     margin-right: 4%; margin-bottom: 4%;
 }
 
