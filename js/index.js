@@ -102,16 +102,18 @@ listGroup.addEventListener('click', (event) => {
     const taskCardsHtml = newTask.render();
     listGroup.innerHTML = taskCardsHtml;
     newTask.save();
+  }
  if (event.target.classList.contains("deleteButton")) {
+   console.log("deleting");
     const parentTask = event.target.parentElement.parentElement.parentElement;
     const taskId = Number(parentTask.dataset.taskId);
     const task = newTask.getTaskById(taskId);
-    newTask.deleteTasks(task); ///this is the line that I do not know if it is corret
+    newTask.deleteTasks(task.id); ///this is the line that I do not know if it is corret
     newTask.save();
     const taskCardsHtml = newTask.render();
     listGroup.innerHTML = taskCardsHtml;
     
- }
+ 
 
     // console.log (task.status);
   }
